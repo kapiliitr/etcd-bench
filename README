@@ -1,0 +1,20 @@
+Metrics - Latency / Throughput
+
+Experiments -
+
+1. One PUT request at a time from one client
+2. Multiple PUT requests at a time from different clients 
+(assuming that one client's requests are serialized)
+
+Similarly as above
+3. One GET request at a time from one client
+4. Multiple GET requests at a time from different clients 
+
+5. One PUT request followed by a GET request from the same client
+6. One PUT request followed by a GET request from a different client
+
+In all the above, vary the number of requests, the number of clients and the size of the requests.
+
+7. GET key not found
+8. GET key cache hit
+9. GET key cache miss
