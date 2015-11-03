@@ -35,5 +35,5 @@ do
 
 done  
 
-# Similarly, this can be done only for the leader in stead of all servers
-# Run for different size of ensemble i.e. different number of servers at 100% writes
+# Grep "Total:" and get the total time for n requests, add to the array and print the average throughput in the end
+# Similarly, grep the latency histogram and construct an aggregate histogram.

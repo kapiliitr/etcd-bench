@@ -18,3 +18,11 @@ In all the above, vary the number of requests, the number of clients and the siz
 7. GET key not found
 8. GET key cache hit
 9. GET key cache miss
+
+TODO:
+
+1. Read/Write workload with only leader.
+
+2. Time to detect leader crash and new leader election
+
+3. Throughput with increasing quorum size (for 100% writes)
