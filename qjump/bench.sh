@@ -30,7 +30,7 @@ for j in `seq 1 $num`; do
 # put multiple requests at a time from different clients to all servers
   echo write, $((curr*5)) client, $keysize key size, to all servers
   for i in ${servers[@]}; do
-    ./boom -m PUT -n $((curr*5*100)) -d value=`head -c $keysize < /dev/zero | tr '\0' '\141'` -c $curr -T application/x-www-form-urlencoded $i/v2/keys/foo | grep -e "Requests/sec" -e "Latency" -e "90%" | tr "\n" "\t" | xargs echo &
+    ./boom -m PUT -n $((curr*5*10)) -d value=`head -c $keysize < /dev/zero | tr '\0' '\141'` -c $curr -T application/x-www-form-urlencoded $i/v2/keys/foo | grep -e "Requests/sec" -e "Latency" -e "90%" | tr "\n" "\t" | xargs echo &
   done
   # wait for all booms to start running
   sleep 3
