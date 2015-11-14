@@ -57,7 +57,7 @@ sleep $1
 
 for i in "${HOSTS[@]}"
 do
-  scp $auth -i etcd root@"$i":~/results.txt ~/qjump/results-"$i".txt
+  scp $auth -i etcd root@"$i":~/results.txt $PWD/results-"$i".txt
 done
 
 for i in "${HOSTS[@]}"
