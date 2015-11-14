@@ -52,12 +52,13 @@ do
   ssh $auth -i etcd root@"$i" "chmod 755 run.py; taskset -c 0 ./run.py \`pidof $etcdbin\` > results.txt 2>&1 &"
 done
 
+./bench.sh
+sleep $1
+
 for i in "${HOSTS[@]}"
 do
   scp $auth -i etcd root@"$i":~/results.txt ~/qjump/results-"$i".txt
 done
-
-sleep $1
 
 for i in "${HOSTS[@]}"
 do
